@@ -11,9 +11,11 @@ return {
         -- OR use snacks.nvim's image module:
         -- 'folke/snacks.nvim',
     },
+    keys = {
+      { "<leader>e", "<cmd>Neotree toggle<cr>", desc = "File explorer" },
+    },
     lazy = false, -- neo-tree will lazily load itself
     ---@module "neo-tree"
     ---@type neotree.Config?
-    opts = {
-    },
+    opts = {},
 }

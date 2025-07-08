@@ -14,12 +14,7 @@ vim.keymap.set('n', '<leader>ff', ":q", {desc = 'Telescope find files'})
 vim.keymap.set('n', '<leader>fg', builtin.live_grep, {desc = 'Telescope live grep'})
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, {desc = 'Telescope help tags'})
 
-vim.keymap.set('n', '<leader>e', '<Cmd>Neotree reveal<CR>', {desc = 'File Explorer'})
-
-
 vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {desc = 'Go to definition'})
 vim.keymap.set({'n','v'}, '<leader>ca', vim.lsp.buf.code_action, {})
-
-
 
 vim.keymap.set('n','<Leader>se', require("luasnip.loaders").edit_snippet_files,{desc = "Edit snippets"})
