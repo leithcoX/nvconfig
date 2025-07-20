@@ -9,5 +9,7 @@ vim.opt.expandtab = true
 vim.opt.number = true
 vim.opt.wrap = false
 
+vim.opt.undofile = true
+
 vim.opt.clipboard = "unnamedplus"
 
