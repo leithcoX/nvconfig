@@ -31,6 +31,9 @@ return {
                 " Most VimTeX mappings rely on localleader and this can be changed with the
                 " following line. The default is usually fine and is the symbol "\".
                 let maplocalleader = " "
+
+                set conceallevel=1
+                let g:tex_conceal='abdmg'
             ]]
         end,
     },
