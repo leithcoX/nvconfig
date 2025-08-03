@@ -8,10 +8,13 @@ return {
 		},
 	},
 	{
-		{
-			"windwp/nvim-autopairs",
-			event = "InsertEnter",
-			opts = {}
-		},
+		"windwp/nvim-autopairs",
+		event = "InsertEnter",
+		opts = {},
+	},
+	{
+		"nmac427/guess-indent.nvim",
+		main = "guess-indent",
+		opts = {},
 	},
 }
