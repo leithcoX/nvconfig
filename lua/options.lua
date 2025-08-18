@@ -12,5 +12,8 @@ vim.opt.wrap = false
 
 vim.opt.undofile = true
 
+-- vim.opt.foldenable = false
+vim.opt.foldlevelstart = 99
+
 vim.opt.clipboard = "unnamedplus"
 
