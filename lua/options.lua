@@ -18,5 +18,7 @@ vim.opt.smartcase = true
 -- vim.opt.foldenable = false
 vim.opt.foldlevelstart = 99
 
+vim.opt.laststatus = 3
+
 vim.opt.clipboard = "unnamedplus"
 
