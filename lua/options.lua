@@ -12,6 +12,9 @@ vim.opt.wrap = false
 
 vim.opt.undofile = true
 
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+
 -- vim.opt.foldenable = false
 vim.opt.foldlevelstart = 99
 
