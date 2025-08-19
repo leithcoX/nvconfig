@@ -1,10 +1,17 @@
-local all_mappings = {
+local mappings = {
     n = {
         ["<leader>s"] = { name = "Snippets" },
         ["<leader>f"] = { name = "Find" },
         ["<leader>w"] = { name = "Save" },
     },
 }
+
+
+for mode,keymaps in pairs(mappings)  do
+    for keys,maps in pairs(keymaps) do
+        if maps[1] ~= nil then vim.keymap.set(mode, keys, maps[1], {desc = maps["desc"]}) end
+    end
+end
 
 -- for mode, mappings in pairs(all_mappings) do
 --     for key, map in pairs(mappings) do
@@ -15,16 +22,18 @@ local all_mappings = {
 --     end
 -- end
 
-vim.keymap.set("n", "<leader>q", ":q<CR>", { desc = "Quit" })
-vim.keymap.set("n", "<leader>w", ":w<CR>", { desc = "Save" })
+vim.keymap.set("n", "<leader>q", "<Cmd>quit<CR>", { desc = "Quit" })
+vim.keymap.set("n", "<leader>w", "<Cmd>write<CR>", { desc = "Save" })
+-- vim.keymap.set("n", "<leader>c", "<Cmd>tabclose<CR>", { desc = "Close Tab" })
+-- vim.keymap.set("n", "<leader>n", "<Cmd>tabnew<CR>", { desc = "New Tab" })
 
 vim.keymap.set("n", "H", "<C-w>h")
 vim.keymap.set("n", "J", "<C-w>j")
 vim.keymap.set("n", "K", "<C-w>k")
 vim.keymap.set("n", "L", "<C-w>l")
 
-vim.keymap.set("n", "<leader>pu", ":Lazy update<CR>", { desc = "Update" })
-vim.keymap.set("n", "<leader>ps", ":Lazy sync<CR>", { desc = "Sync" })
+vim.keymap.set("n", "<leader>pu", "<Cmd>Lazy update<CR>", { desc = "Update" })
+vim.keymap.set("n", "<leader>ps", "<Cmd>Lazy sync<CR>", { desc = "Sync" })
 
 do
     local wk = require("which-key")
@@ -38,7 +47,7 @@ end
 
 local builtin = require("telescope.builtin")
 -- vim.keymap.set('n', '<leader>f', "" , {group = 'Find'})
-vim.keymap.set("n", "<leader>ff", ":q", { desc = "Telescope find files" })
+-- vim.keymap.set("n", "<leader>ff", ":q", { desc = "Telescope find files" })
 vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "Telescope live grep" })
 vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Telescope help tags" })
 
