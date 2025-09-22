@@ -41,11 +41,22 @@ return {
 	{
 		"neovim/nvim-lspconfig",
 		config = function()
+			local lspconfig = require("lspconfig")
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-			local lspconfig = require("lspconfig")
-			lspconfig.lua_ls.setup({ capabilities = capabilities })
-			lspconfig.clangd.setup({ capabilities = capabilities })
+			local function on_attach (client, bufnr)
+				require("nvim-navic").attach(client, bufnr)
+			end
+
+			-- lista de servidores que quieras configurar
+			local servers = { "lua_ls", "clangd", "texlab", "ts_ls", "jsonls", "yamlls"}
+
+			for _, lsp in ipairs(servers) do
+				lspconfig[lsp].setup({
+					capabilities = capabilities,
+					on_attach = on_attach,
+				})
+			end
 		end,
 	},
 }
